@@ -25,9 +25,10 @@ server.on('request', (req, res) => {
         if (error.code === 'ENOENT') {
           res.statusCode = 404;
           res.end();
+        } else {
+          res.statusCode = 500;
+          res.end();
         }
-        res.statusCode = 500;
-        res.end();
       });
 
       req.on('aborted', () => {
