@@ -1,4 +1,3 @@
-const path = require('path');
 const Koa = require('koa');
 const {v4: uuid} = require('uuid');
 const Router = require('koa-router');
@@ -15,7 +14,6 @@ const Session = require('./models/Session');
 const app = new Koa();
 
 app.use(require('koa-bodyparser')());
-app.use(require('koa-static')(path.join(__dirname, 'public')));
 
 app.use(async (ctx, next) => {
   try {
